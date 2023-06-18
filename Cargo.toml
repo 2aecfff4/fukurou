@@ -1,0 +1,36 @@
+[workspace]
+resolver = "2"
+members = ["crates/*", "fukurou"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.69"
+
+[profile.dev]
+debug = 2
+
+[profile.release]
+lto = true
+debug = true
+
+[workspace.dependencies]
+# Local crates
+fukurou_core = { path = "./crates/fukurou_core" }
+fukurou_gui = { path = "./crates/fukurou_gui" }
+fukurou_helpers = { path = "./crates/fukurou_helpers" }
+fukurou_player = { path = "./crates/fukurou_player" }
+
+# Non-local crates
+anyhow = "1.0.71"
+async-trait = "0.1.68"
+env_logger = "0.10.0"
+log = "0.4.17"
+thiserror = "1.0.40"
+qmetaobject = { git = "https://github.com/woboq/qmetaobject-rs.git", rev = "89b8eb4", features = [
+    "chrono_qdatetime",
+] }
+# ureq = { version = "2.6.2", features = ["json"] }
+serde = { version = "1.0.163", features = ["derive"] }
+serde_json = { version = "1.0.95", features = ["std"] }
+parking_lot = "0.12.1"

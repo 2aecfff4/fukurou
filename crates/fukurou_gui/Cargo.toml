@@ -1,0 +1,12 @@
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[package]
+name = "fukurou_gui"
+version = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+qmetaobject = { workspace = true }
+log = { workspace = true }
+
+cstr = "0.2.11"
+
